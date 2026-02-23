@@ -9,10 +9,10 @@ pipeline {
         Course="Jenkins"
         appVersion = ""
     }
-    options{
-        timeout(time: 10, unit: 'SECONDS')
-        disableConcurrentBuilds()
-    }
+    // options{
+    //     timeout(time: 10, unit: 'SECONDS')
+    //     disableConcurrentBuilds()
+    // }
 
     // This is build
     stages {
@@ -35,6 +35,7 @@ pipeline {
                 }
             }
         }
+
         stage('build image') {
             steps {
                 script{
