@@ -39,6 +39,16 @@ pipeline {
             }
         }
 
+        stage('Test dependencies') {
+            steps {
+                script{
+                    sh """
+                        npm test
+                    """
+                }
+            }
+        }
+
         stage('build image') {
             steps {
                 script{                    
