@@ -55,6 +55,7 @@ pipeline {
                 }
             }
         }
+        }
 
             when{
                 expression { "$params.DEPLOY" == "true" }
