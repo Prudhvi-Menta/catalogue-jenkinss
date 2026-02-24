@@ -41,8 +41,7 @@ pipeline {
 
         stage('build image') {
             steps {
-                script{
-                    
+                script{                    
                         withAWS(region:'eu-central-1',credentials:'aws creds') {
                         sh """
                         # aws login
@@ -52,8 +51,10 @@ pipeline {
                         # docker push
                         docker push ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/$PROJECT/$COMPONENT:$appVersion
                         """
+                    }
                 }
             }
+        
         }
     }
 
