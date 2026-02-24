@@ -55,20 +55,6 @@ pipeline {
                 }
             }
         }
-        }
-
-            when{
-                expression { "$params.DEPLOY" == "true" }
-            }
-            steps {
-                 script{
-                    sh """
-                        echo "This is Deploy stage"
-                        echo $Course
-                    """
-                }
-            }
-        }
     }
 
     post{
